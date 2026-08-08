@@ -7,7 +7,9 @@
 
 #include"spi.h"
 
-
+/*
+ * This function is for enable peripheral clock
+ */
 void SPI_periclockcontrol(SPI_TypeDef *pSPIx,uint8_t ENorDI)
 {
 	if(ENorDI == ENABLE)
@@ -22,7 +24,9 @@ void SPI_periclockcontrol(SPI_TypeDef *pSPIx,uint8_t ENorDI)
 
 	}
 }
-
+/*
+ * This function is for SPI init
+ */
 void SPI_Init(SPI_Handel_t *SPI_Handel)
 {
 	uint32_t tempreg = 0;
@@ -82,6 +86,9 @@ void SPI_Init(SPI_Handel_t *SPI_Handel)
 	SPI_Handel->pSPIx->CR2 = tempreg;
 }
 
+/*
+ * This function enables peripheral
+ */
 void SPI_PeripheralControl(SPI_TypeDef *pSPIx,uint8_t ENorDI)
 {
 	if(ENorDI == ENABLE)
@@ -94,6 +101,9 @@ void SPI_PeripheralControl(SPI_TypeDef *pSPIx,uint8_t ENorDI)
 	}
 }
 
+/*
+ * This function sends byte
+ */
 void SPI_Send(SPI_Handel_t *pSPIhandel,uint8_t *pTxBuffer,uint32_t len)
 {
 	while(len > 0)
@@ -117,6 +127,9 @@ void SPI_Send(SPI_Handel_t *pSPIhandel,uint8_t *pTxBuffer,uint32_t len)
 	while(SPI_GetStatusFlag(pSPIhandel->pSPIx,SPI_SR_BSY) == FLAG_SET);
 }
 
+/*
+ * This function checks status flag
+ */
 uint32_t SPI_GetStatusFlag(SPI_TypeDef *pSPIx,uint32_t Spi_Flagname)
 {
 	if(pSPIx->SR & Spi_Flagname)
