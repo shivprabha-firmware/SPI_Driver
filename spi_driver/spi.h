@@ -23,6 +23,7 @@ typedef struct
 	uint8_t SPI_SSM;
 }SPI_Config_t;
 
+//SPI Handel
 typedef struct
 {
 	SPI_TypeDef *pSPIx;
