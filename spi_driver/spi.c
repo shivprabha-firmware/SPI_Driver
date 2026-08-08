@@ -140,6 +140,9 @@ uint32_t SPI_GetStatusFlag(SPI_TypeDef *pSPIx,uint32_t Spi_Flagname)
 		return FLAG_RESET;
 }
 
+/*
+ * This function receives bytes
+ */
 void SPI_Receive(SPI_Handel_t *pSPIHandel,uint8_t *RxBuffer, uint32_t len)
 {
 	while(len > 0)
