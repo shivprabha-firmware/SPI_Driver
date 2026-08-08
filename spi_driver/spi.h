@@ -2,7 +2,7 @@
  * spi.h
  *
  *  Created on: 07-Jul-2026
- *      Author: rohan
+ *      Author: Shivprabha
  */
 
 #ifndef SPI_DRIVER_H_
